@@ -93,11 +93,11 @@ struct AppView: View {
   let store: StoreOf<AppFeature>
 
   var body: some View {
-    WithViewStore(self.store, observe: { $0 }) { viewStore in
+    Group {
       NavigationSplitView {
         IfLetStore(
           self.store.scope(
-            state: \.$sidepanel, 
+            state: \.$sidepanel,
             action: \.sidepanel
           )
         ) { store in
@@ -131,8 +131,8 @@ struct AppView: View {
         }
         .frame(minWidth: 400)
       }
-      .frame(minWidth: 950)
     }
+    .frame(minWidth: 950)
   }
 }
 
