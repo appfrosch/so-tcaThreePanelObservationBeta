@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CDC3EC8B2B2B5387003E00EF /* so_tcaThreePanelObservationBetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3EC8A2B2B5387003E00EF /* so_tcaThreePanelObservationBetaApp.swift */; };
-		CDC3EC8D2B2B5387003E00EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3EC8C2B2B5387003E00EF /* ContentView.swift */; };
 		CDC3EC8F2B2B5389003E00EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC3EC8E2B2B5389003E00EF /* Assets.xcassets */; };
 		CDC3EC932B2B5389003E00EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC3EC922B2B5389003E00EF /* Preview Assets.xcassets */; };
+		CDC3EC9B2B2B53C0003E00EF /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CDC3EC9A2B2B53C0003E00EF /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CDC3EC872B2B5387003E00EF /* so-tcaThreePanelObservationBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "so-tcaThreePanelObservationBeta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC3EC8A2B2B5387003E00EF /* so_tcaThreePanelObservationBetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = so_tcaThreePanelObservationBetaApp.swift; sourceTree = "<group>"; };
-		CDC3EC8C2B2B5387003E00EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CDC3EC8E2B2B5389003E00EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC3EC902B2B5389003E00EF /* so_tcaThreePanelObservationBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = so_tcaThreePanelObservationBeta.entitlements; sourceTree = "<group>"; };
 		CDC3EC922B2B5389003E00EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -27,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC3EC9B2B2B53C0003E00EF /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				CDC3EC8A2B2B5387003E00EF /* so_tcaThreePanelObservationBetaApp.swift */,
-				CDC3EC8C2B2B5387003E00EF /* ContentView.swift */,
 				CDC3EC8E2B2B5389003E00EF /* Assets.xcassets */,
 				CDC3EC902B2B5389003E00EF /* so_tcaThreePanelObservationBeta.entitlements */,
 				CDC3EC912B2B5389003E00EF /* Preview Content */,
@@ -85,6 +84,9 @@
 			dependencies = (
 			);
 			name = "so-tcaThreePanelObservationBeta";
+			packageProductDependencies = (
+				CDC3EC9A2B2B53C0003E00EF /* ComposableArchitecture */,
+			);
 			productName = "so-tcaThreePanelObservationBeta";
 			productReference = CDC3EC872B2B5387003E00EF /* so-tcaThreePanelObservationBeta.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +115,9 @@
 				Base,
 			);
 			mainGroup = CDC3EC7E2B2B5387003E00EF;
+			packageReferences = (
+				CDC3EC992B2B53C0003E00EF /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = CDC3EC882B2B5387003E00EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +144,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC3EC8D2B2B5387003E00EF /* ContentView.swift in Sources */,
 				CDC3EC8B2B2B5387003E00EF /* so_tcaThreePanelObservationBetaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +363,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDC3EC992B2B53C0003E00EF /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDC3EC9A2B2B53C0003E00EF /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDC3EC992B2B53C0003E00EF /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDC3EC7F2B2B5387003E00EF /* Project object */;
 }

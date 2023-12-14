@@ -11,7 +11,8 @@ import SwiftUI
 struct so_tcaThreePanelObservationBetaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmptyView()
         }
     }
 }
+
