@@ -31,12 +31,13 @@ import ComposableArchitecture
 
 @Reducer
 struct AppFeature {
+  @ObservableState
   struct State: Equatable {
     var items: [Item]
 
-    @PresentationState var sidepanel: SidepanelFeature.State?
-    @PresentationState var list: ListFeature.State?
-    @PresentationState var detail: DetailFeature.State?
+    @Presents var sidepanel: SidepanelFeature.State?
+    @Presents var list: ListFeature.State?
+    @Presents var detail: DetailFeature.State?
 
     init(
       items: [Item],
