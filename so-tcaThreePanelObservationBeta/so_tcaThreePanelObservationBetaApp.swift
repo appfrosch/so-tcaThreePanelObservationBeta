@@ -231,6 +231,7 @@ struct ListView: View {
 
 @Reducer
 struct DetailFeature {
+  @ObservableState
   struct State: Equatable {
     let item: Item
   }
@@ -252,8 +253,6 @@ struct DetailView: View {
   let store: StoreOf<DetailFeature>
 
   var body: some View {
-    WithViewStore(self.store, observe: { $0 }) { viewStore in
-      Text(viewStore.item.id.uuidString)
-    }
+      Text(store.item.id.uuidString)
   }
 }
