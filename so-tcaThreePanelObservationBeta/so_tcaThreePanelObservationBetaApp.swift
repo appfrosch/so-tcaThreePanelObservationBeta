@@ -189,6 +189,7 @@ struct SidepanelView: View {
 
 @Reducer
 struct ListFeature {
+  @ObservableState
   struct State: Equatable {
     var items: [Item]
   }
@@ -216,14 +217,12 @@ struct ListView: View {
   let store: StoreOf<ListFeature>
 
   var body: some View {
-    WithViewStore(self.store, observe: { $0 }) { viewStore in
-      List(selection: $selection) {
-        ForEach(viewStore.items) { item in
-          Text(item.id.uuidString)
-        }
-        .onChange(of: selection) {
-          viewStore.send(.delegate(.didSelectItems(selection)))
-        }
+    List(selection: $selection) {
+      ForEach(store.items) { item in
+        Text(item.id.uuidString)
+      }
+      .onChange(of: selection) {
+        store.send(.delegate(.didSelectItems(selection)))
       }
     }
   }
@@ -253,6 +252,6 @@ struct DetailView: View {
   let store: StoreOf<DetailFeature>
 
   var body: some View {
-      Text(store.item.id.uuidString)
+    Text(store.item.id.uuidString)
   }
 }
