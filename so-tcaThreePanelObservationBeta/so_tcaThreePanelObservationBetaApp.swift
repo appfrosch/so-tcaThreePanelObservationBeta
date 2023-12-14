@@ -148,6 +148,7 @@ struct AppView: View {
 
 @Reducer
 struct SidepanelFeature {
+  @ObservableState
   struct State: Equatable {
     var items: [Item]
   }
@@ -174,16 +175,14 @@ struct SidepanelView: View {
   let store: StoreOf<SidepanelFeature>
 
   var body: some View {
-    WithViewStore(self.store, observe: { $0 }) { viewStore in
-      Form {
-        Button("Load Sample Data") {
-          viewStore.send(.delegate(.showSampleDataButtonPressed))
-        }
-        Spacer()
+    Form {
+      Button("Load Sample Data") {
+        store.send(.delegate(.showSampleDataButtonPressed))
       }
-      .frame(minWidth: 150)
-      .padding()
+      Spacer()
     }
+    .frame(minWidth: 150)
+    .padding()
   }
 }
 
