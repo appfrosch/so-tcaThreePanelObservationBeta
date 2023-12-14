@@ -97,7 +97,7 @@ struct AppView: View {
         IfLetStore(
           self.store.scope(
             state: \.$sidepanel, 
-            action: AppFeature.Action.sidepanel
+            action: \.sidepanel
           )
         ) { store in
           SidepanelView(store: store)
@@ -108,7 +108,7 @@ struct AppView: View {
           IfLetStore(
             self.store.scope(
               state: \.$list,
-              action: AppFeature.Action.list
+              action: \.list
             )
           ) { store in
             ListView(store: store)
@@ -122,7 +122,7 @@ struct AppView: View {
           IfLetStore(
             self.store.scope(
               state: \.$detail,
-              action: AppFeature.Action.detail
+              action: \.detail
             )
           ) { store in
             DetailView(store: store)
