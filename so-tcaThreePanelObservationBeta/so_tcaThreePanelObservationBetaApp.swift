@@ -95,14 +95,8 @@ struct AppView: View {
   var body: some View {
     Group {
       NavigationSplitView {
-        IfLetStore(
-          self.store.scope(
-            state: \.$sidepanel,
-            action: \.sidepanel
-          )
-        ) { store in
-          SidepanelView(store: store)
-            .padding()
+        if let sidepanelStore = store.scope(state: \.sidepanel, action: \.sidepanel) {
+          SidepanelView(store: sidepanelStore)
         }
       } content: {
         Group  {
